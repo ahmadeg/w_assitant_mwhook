@@ -66,4 +66,4 @@ def call_service2():
     return {'message': 'Service 2 response'}
 
 if __name__ == '__main__':
-    app.run(host= '0.0.0.0',port=8080)
+    app.run(port=8080)
