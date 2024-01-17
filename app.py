@@ -37,7 +37,9 @@ def webhook():
         # 'action' parameter is missing, return an error response
         whook_reponse = {'error': 'Action parameter is missing'}
 
-    return jsonify(whook_reponse)
+    #return jsonify(whook_reponse)
+     return whook_reponse
+
 
 
 # Helper function to call get correspondence count
