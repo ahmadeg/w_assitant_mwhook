@@ -15,15 +15,15 @@ def webhook():
             cust_id = params['user_xxx']
             # Call service 1 and get the response
             response = get_cospnd_count(cust_id)['corspnd_no']
-            reply = {"body": "corees_count",
-                     "corr_no": response}
-            #reply = json.dumps(reply)
+            reply = {'body': 'corees_count',
+                     'corr_no': response}
+            reply = json.dumps(reply)
             whook_reponse=  {
-                "headers": {
-                    "Content-Type": "application/json",
+                'headers': {
+                    'Content-Type': 'application/json',
                 },
-                "statusCode": 200,
-                "body": reply, }
+                'statusCode': 200,
+                'body': reply, }
 
         elif action_name == 'action2':
             # Call service 2 and get the response
@@ -37,9 +37,9 @@ def webhook():
         # 'action' parameter is missing, return an error response
         whook_reponse = {'error': 'Action parameter is missing'}
 
-    #return jsonify(whook_reponse)
+    return jsonify(whook_reponse)
     #return whook_reponse
-    return json.dumps(whook_reponse)
+    #return json.dumps(whook_reponse)
 
 
 
