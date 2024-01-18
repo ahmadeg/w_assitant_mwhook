@@ -38,7 +38,8 @@ def webhook():
         whook_reponse = {'error': 'Action parameter is missing'}
 
     #return jsonify(whook_reponse)
-    return whook_reponse
+    #return whook_reponse
+    return json.dumps(whook_reponse)
 
 
 
