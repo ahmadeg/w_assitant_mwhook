@@ -17,13 +17,25 @@ def webhook():
             response = get_cospnd_count(cust_id)['corspnd_no']
             reply = {'body': 'corees_count',
                      'corr_no': response}
-            reply = json.dumps(reply)
-            whook_reponse=  {
-                'headers': {
-                    'Content-Type': 'application/json',
+            #reply = json.dumps(reply)
+            # whook_reponse=  {
+            #     'headers': {
+            #         'Content-Type': 'application/json',
+            #     },
+            #     'statusCode': 200,
+            #     'body': reply, }
+            hook_reponse= {
+                'body': {
+                    'param_id': 'corees_count',
+                    'corr_no': response
                 },
-                'statusCode': 200,
-                'body': reply, }
+                'headers': {
+                    'Content-Type': 'application/json'
+                },
+                'statusCode': 200
+            }
+
+        
 
         elif action_name == 'action2':
             # Call service 2 and get the response
