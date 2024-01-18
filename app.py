@@ -17,7 +17,7 @@ def webhook():
             response = get_cospnd_count(cust_id)['corspnd_no']
             reply = {"body": "corees_count",
                      "corr_no": response}
-            reply = json.dumps(reply)
+            #reply = json.dumps(reply)
             whook_reponse=  {
                 "headers": {
                     "Content-Type": "application/json",
